@@ -1,0 +1,243 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', sans-serif; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; background: #fff; border-bottom: 0.5px solid #e0e0e0; }
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo-circle { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #5bc8d4; display: flex; align-items: center; justify-content: center; background: #fff; }
+.logo-text { font-size: 13px; font-weight: 500; color: #1a1a2e; line-height: 1.3; }
+.logo-text span { color: #5bc8d4; }
+.logo-sub { font-size: 10px; color: #888; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { font-size: 13px; color: #444; text-decoration: none; }
+
+.hero { background: #0f1624; padding: 70px 28px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(91,200,212,0.12) 0%, transparent 70%); }
+.hero-content { position: relative; z-index: 1; }
+.hero-badge { display: inline-block; background: rgba(91,200,212,0.15); color: #5bc8d4; font-size: 11px; padding: 6px 18px; border-radius: 20px; margin-bottom: 20px; border: 0.5px solid rgba(91,200,212,0.4); letter-spacing: 1px; text-transform: uppercase; }
+.hero h1 { font-size: 38px; font-weight: 500; color: #fff; margin-bottom: 10px; line-height: 1.25; }
+.hero h1 span { color: #5bc8d4; }
+.hero p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 28px; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.btn-teal { display: inline-block; background: #5bc8d4; color: #fff; font-size: 13px; padding: 11px 26px; border-radius: 8px; text-decoration: none; margin-right: 8px; }
+.btn-outline { display: inline-block; background: transparent; color: #fff; font-size: 13px; padding: 11px 26px; border-radius: 8px; text-decoration: none; border: 0.5px solid rgba(255,255,255,0.35); }
+.hero-dogs { display: flex; justify-content: center; gap: 16px; margin-top: 40px; }
+.hero-dog-img { width: 160px; height: 200px; border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(91,200,212,0.3); }
+.hero-dog-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-dog-img.tall { height: 230px; margin-top: -16px; }
+
+.section { padding: 48px 28px; }
+.sec-label { font-size: 11px; letter-spacing: 2px; color: #5bc8d4; text-transform: uppercase; margin-bottom: 6px; }
+.sec-title { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.sec-sub { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 28px; }
+
+.dogs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.dog-card { border-radius: 12px; overflow: hidden; border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); }
+.dog-img-wrap { height: 160px; overflow: hidden; }
+.dog-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dog-info { padding: 12px 14px; }
+.dog-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.dog-detail { font-size: 12px; color: var(--color-text-secondary); }
+.dog-tag { display: inline-block; background: rgba(91,200,212,0.12); color: #3aabb5; font-size: 11px; padding: 3px 8px; border-radius: 4px; margin-top: 6px; }
+
+.steps-bg { background: #f7fbfc; padding: 48px 28px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.step { text-align: center; padding: 24px 14px; background: #fff; border-radius: 12px; border: 0.5px solid #e0e0e0; }
+.step-num { width: 42px; height: 42px; border-radius: 50%; background: #0f1624; color: #5bc8d4; font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; border: 1.5px solid #5bc8d4; }
+.step-title { font-size: 14px; font-weight: 500; color: #1a1a2e; margin-bottom: 6px; }
+.step-desc { font-size: 12px; color: #888; line-height: 1.6; }
+
+.about-section { padding: 48px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--color-background-secondary); }
+.about-text p { font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 14px; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.about-tag { background: rgba(91,200,212,0.12); color: #3aabb5; font-size: 12px; padding: 5px 14px; border-radius: 20px; border: 0.5px solid rgba(91,200,212,0.3); }
+.about-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.about-img-grid img { width: 100%; height: 145px; object-fit: cover; border-radius: 10px; display: block; }
+.about-img-grid img.wide { grid-column: span 2; height: 115px; }
+
+.footer { background: #0f1624; padding: 40px 28px 20px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.footer h4 { font-size: 13px; font-weight: 500; color: #fff; margin-bottom: 12px; }
+.footer p, .footer a { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 2; text-decoration: none; display: block; }
+.footer a:hover { color: #5bc8d4; }
+.social-links { display: flex; gap: 8px; margin-top: 12px; }
+.social-btn { background: rgba(91,200,212,0.12); color: #5bc8d4; font-size: 11px; padding: 5px 14px; border-radius: 6px; text-decoration: none; border: 0.5px solid rgba(91,200,212,0.3); }
+.footer-bottom { border-top: 0.5px solid rgba(255,255,255,0.08); padding-top: 16px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.25); }
+</style>
+
+<div class="nav">
+  <div class="logo-area">
+    <div class="logo-circle">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none">
+        <ellipse cx="20" cy="17" rx="8" ry="9" fill="#5bc8d4" opacity="0.9"/>
+        <ellipse cx="14" cy="10" rx="3" ry="5" fill="#1a1a2e" transform="rotate(-20 14 10)"/>
+        <ellipse cx="26" cy="10" rx="3" ry="5" fill="#1a1a2e" transform="rotate(20 26 10)"/>
+        <circle cx="17" cy="17" r="1.5" fill="#fff"/>
+        <circle cx="23" cy="17" r="1.5" fill="#fff"/>
+        <ellipse cx="20" cy="21" rx="2" ry="1.5" fill="#f4a0a0"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text"><span>Martín</span> del Río</div>
+      <div class="logo-sub">SIBERIAN HUSKY</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Inicio</a>
+    <a href="#">Camadas</a>
+    <a href="#">Machos</a>
+    <a href="#">Hembras</a>
+    <a href="#">Galería</a>
+    <a href="#">Contacto</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Criadero desde 2012 · Martín del Río</div>
+    <h1>Siberian Husky<br><span>de Martín del Río</span></h1>
+    <p>Criadores especializados en Siberian Husky con más de 12 años de experiencia. Camadas con pedigree reconocido por la RSCE.</p>
+    <a href="#" class="btn-teal">Ver camadas</a>
+    <a href="#" class="btn-outline">Contáctanos</a>
+  </div>
+  <div class="hero-dogs">
+    <div class="hero-dog-img">
+      <img src="https://images.unsplash.com/photo-1590419690008-905895e8fe0d?w=400&q=80" alt="cachorro"/>
+    </div>
+    <div class="hero-dog-img tall">
+      <img src="https://images.unsplash.com/photo-1617895153857-82fe0c43621b?w=400&q=80" alt="husky adulto"/>
+    </div>
+    <div class="hero-dog-img">
+      <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=400&q=80" alt="husky campo"/>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Nuestros ejemplares</div>
+  <div class="sec-title">Conoce a la familia</div>
+  <div class="sec-sub">Ejemplares con pedigree y carácter excepcional</div>
+  <div class="dogs-grid">
+    <div class="dog-card">
+      <div class="dog-img-wrap"><img src="https://images.unsplash.com/photo-1617895153857-82fe0c43621b?w=400&q=80" alt="husky"/></div>
+      <div class="dog-info">
+        <div class="dog-name">Adultos</div>
+        <div class="dog-detail">Siberian Husky · Reproductores</div>
+        <div class="dog-tag">Ver más</div>
+      </div>
+    </div>
+    <div class="dog-card">
+      <div class="dog-img-wrap"><img src="https://images.unsplash.com/photo-1590419690008-905895e8fe0d?w=400&q=80" alt="cachorro"/></div>
+      <div class="dog-info">
+        <div class="dog-name">Cachorros</div>
+        <div class="dog-detail">Siberian Husky · Ojos azules</div>
+        <div class="dog-tag">Camada M activa</div>
+      </div>
+    </div>
+    <div class="dog-card">
+      <div class="dog-img-wrap"><img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=400&q=80" alt="husky"/></div>
+      <div class="dog-info">
+        <div class="dog-name">Hembras</div>
+        <div class="dog-detail">Siberian Husky · Reproductoras</div>
+        <div class="dog-tag">Ver ejemplares</div>
+      </div>
+    </div>
+    <div class="dog-card">
+      <div class="dog-img-wrap"><img src="https://images.unsplash.com/photo-1590419690008-905895e8fe0d?w=400&q=80" alt="próxima camada"/></div>
+      <div class="dog-info">
+        <div class="dog-name">Próxima camada</div>
+        <div class="dog-detail">Siberian Husky · Reservas</div>
+        <div class="dog-tag">Reservar plaza</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="steps-bg">
+  <div style="padding: 0 0 28px;">
+    <div class="sec-label">El proceso</div>
+    <div class="sec-title">Cómo tener tu Husky</div>
+    <div class="sec-sub">Sencillo y transparente de principio a fin</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Camadas</div>
+      <div class="step-desc">Consulta nuestras próximas camadas y toda la información disponible.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Conócenos</div>
+      <div class="step-desc">Visítanos y conoce a los cachorros en persona antes de decidir.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Documentación</div>
+      <div class="step-desc">Gestionamos pedigree, cartilla sanitaria y todos los papeles.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">A casa</div>
+      <div class="step-desc">Tu Husky listo para su nuevo hogar con todas las garantías.</div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <div class="about-img-grid">
+    <img src="https://images.unsplash.com/photo-1590419690008-905895e8fe0d?w=400&q=80" alt="cachorro 1"/>
+    <img src="https://images.unsplash.com/photo-1617895153857-82fe0c43621b?w=400&q=80" alt="adulto"/>
+    <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=800&q=80" alt="familia" class="wide"/>
+  </div>
+  <div class="about-text">
+    <div class="sec-label">Quiénes somos</div>
+    <div class="sec-title">Martín del Río<br>Siberian Husky</div>
+    <p>Somos criadores especializados en Siberian Husky desde 2012, con más de una década criando ejemplares de alta calidad con carácter y salud excepcionales.</p>
+    <p>¡Por todo ES y el mundo!</p>
+    <div class="about-tags">
+      <span class="about-tag">Desde 2012</span>
+      <span class="about-tag">+3.400 seguidores</span>
+      <span class="about-tag">Camada M activa</span>
+      <span class="about-tag">Pedigree RSCE</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="width:36px;height:36px;border-radius:50%;border:1.5px solid #5bc8d4;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="16" rx="8" ry="9" fill="#5bc8d4"/><circle cx="17" cy="17" r="1.5" fill="#fff"/><circle cx="23" cy="17" r="1.5" fill="#fff"/></svg>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:#fff;">Martín del Río</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:1px;">SIBERIAN HUSKY</div>
+        </div>
+      </div>
+      <p>Criadero de Siberian Husky desde 2012 con pedigree reconocido por la Real Sociedad Canina Española.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn">Instagram</a>
+        <a href="#" class="social-btn">TikTok</a>
+      </div>
+    </div>
+    <div>
+      <h4>Páginas</h4>
+      <a href="#">Inicio</a>
+      <a href="#">Camadas</a>
+      <a href="#">Machos</a>
+      <a href="#">Hembras</a>
+      <a href="#">Galería</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>Martín del Río, España</p>
+      <a href="#">@huskysmartindelrio</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Huskys Martín del Río</span>
+    <span>Aviso legal · Privacidad · Cookies</span>
+  </div>
+</div>
